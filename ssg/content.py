@@ -30,5 +30,4 @@ class Content(Mapping):
 
 
     @property
-    def setter(self:
-        )
+    def setter(self):
