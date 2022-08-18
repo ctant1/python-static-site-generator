@@ -11,10 +11,19 @@ class Content(Mapping):
     def load(cls, string):
         _, fm, content = Content.__regex.split(string, 2)
         load(fm, Loader=FullLoader)
-        cls(metadata, content)
+        return(cls(metadata, content))
 
 
     def __init__(self, metadata, content):
         self.data = metadata
         self.data["content"] = content
 
+
+    @property
+    def body():
+        return(Content.data["content"])
+
+
+    @property
+    def type():
+        return (Content.data["type"] if Content.data.has_key("type") else None)
