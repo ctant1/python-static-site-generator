@@ -15,4 +15,4 @@ class Content(Mapping):
 
     def __init__(self, metadata, content):
         self.data = metadata
-        self.data.["content"] = content
+        self.data["content"] = content
