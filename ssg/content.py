@@ -9,9 +9,9 @@ class Content(Mapping):
 
     @classmethod
     def load(cls, string):
-        _, fm, content = Content.__regex.split(string, 2)
+        _, fm, content = cls.__regex.split(string, 2)
         load(fm, Loader=FullLoader)
-        return(cls(metadata, content))
+        return(cls(self, metadata, content))
 
 
     def __init__(self, metadata, content):
@@ -20,10 +20,10 @@ class Content(Mapping):
 
 
     @property
-    def body():
+    def body(self):
         return(Content.data["content"])
 
 
     @property
-    def type():
+    def type(self):
         return (Content.data["type"] if Content.data.has_key("type") else None)
