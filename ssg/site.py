@@ -22,13 +22,13 @@ class Site:
                 self.run_parser(path)
 
 
-    def load_parser(extension):
+    def load_parser(self, extension):
         for parser in self.parsers:
             if self.valid_extension(extension):
                 return extension
 
         
-    def run_parser(path):
+    def run_parser(self, path):
         parser = load_parser(path.suffix)
         if parser != None:
             parser.parse()
