@@ -2,7 +2,7 @@ from os import mkdir
 from pathlib import Path 
 
 
-class site:
+class Site:
     def __init__(self, source, dest):
         self.source=path(source)
         self.dest=path(dest)
