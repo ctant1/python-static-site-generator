@@ -1,5 +1,5 @@
 from os import mkdir
-import Path from pathlib
+import path from pathlib
 
 
 class site:
