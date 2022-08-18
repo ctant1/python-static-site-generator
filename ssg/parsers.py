@@ -5,29 +5,29 @@ import shutil
 class Parser:
     extensions = List[str]
 
-    def valid_extension(extension):
+    def valid_extension(self, extension):
         if extension in self.extensions:
             return True
         else:
             return False
 
 
-    def parse(Path: path, source, dest):
+    def parse(self, Path: path, source, dest):
         raise NotImplementedError
 
 
-    def read(path):
+    def read(self, path):
         with open(path) as file:
             return(file.read())
 
 
-    def write (path, dest, content, ext="html"):
+    def write (self, path, dest, content, ext="html"):
         full_path = self.dest / with_suffix(ext).name
         with open(full_path, 'w') as file:
             file.write(content)
 
 
-    def copy(path, source, dest):
+    def copy(self, path, source, dest):
         shutil.copy2(path, dest / source)
 
 
