@@ -1,5 +1,5 @@
 from os import mkdir
-import path from pathlib
+from pathlib import Path 
 
 
 class site:
@@ -13,7 +13,7 @@ class site:
         mkdir(directory, parents=True, exist_ok=True)
 
 
-    def build(self)
+    def build(self):
         mkdir(self.dest, parents=True, exist_ok=True)
         for path in self.source.rglob("*"):
             if isdir(path):
